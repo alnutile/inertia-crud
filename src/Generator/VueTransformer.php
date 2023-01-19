@@ -61,7 +61,7 @@ class VueTransformer extends BaseTransformer
 
         /** @var \Symfony\Component\Finder\SplFileInfo $file */
         foreach ($files as $file) {
-            File::copy($file->getPathname(), $rootPath . "/" . $file->getFilename());
+            File::copy($file->getPathname(), $rootPath.'/'.$file->getFilename());
         }
     }
 }
