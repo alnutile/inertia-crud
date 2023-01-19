@@ -44,7 +44,7 @@
                                             <tbody class="divide-y divide-gray-200 bg-white">
                                             <tr v-for="[RESOURCE_SINGULAR_KEY] in [RESOURCE_PLURAL_KEY].data" :key="[RESOURCE_SINGULAR_KEY].id">
                                                 <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ [RESOURCE_SINGULAR_KEY].id }}</td>
-                                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ truncateSubject([RESOURCE_SINGULAR_KEY].subject) }}</td>
+                                                <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">{{ [RESOURCE_SINGULAR_KEY].subject }}</td>
                                                 <td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                     <Active :active="[RESOURCE_SINGULAR_KEY].active"/>
                                                 </td>
@@ -91,13 +91,6 @@ export default {
             toast: useToast()
         }
     },
-    methods: {
-        truncateSubject(subject) {
-            return _.truncate(subject, {
-                length: 35
-            })
-        }
-    }
 }
 </script>
 
