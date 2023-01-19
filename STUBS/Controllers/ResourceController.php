@@ -73,7 +73,7 @@ class [RESOURCE_PROPER]Controller extends Controller
 
         $[RESOURCE_SINGULAR_KEY]->update($validated);
 
-        return redirect()->route('templates.edit', ['[RESOURCE_SINGULAR_KEY]' => $[RESOURCE_SINGULAR_KEY]->id]);
+        return redirect()->route('[RESOURCE_PLURAL_KEY].edit', ['[RESOURCE_SINGULAR_KEY]' => $[RESOURCE_SINGULAR_KEY]->id]);
     }
 
     public function destroy($id)
