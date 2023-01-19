@@ -8,11 +8,12 @@ abstract class BaseTransformer
 {
     protected GeneratorRepository $generatorRepository;
 
-    abstract public function handle(GeneratorRepository $generatorRepository) : void;
+    abstract public function handle(GeneratorRepository $generatorRepository): void;
 
-    protected function getContents(string $relativePathAndFile) : string {
+    protected function getContents(string $relativePathAndFile): string
+    {
         $content = $this->generatorRepository->getRootPathOrStubs().$relativePathAndFile;
+
         return File::get($content);
     }
-
 }

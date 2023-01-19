@@ -3,12 +3,10 @@
 namespace SundanceSolutions\InertiaCrud\Generator;
 
 use Facades\SundanceSolutions\InertiaCrud\Generator\TokenReplacer;
-use Illuminate\Support\Facades\File;
 
 class ControllerTransformer extends BaseTransformer
 {
-
-    public function handle(GeneratorRepository $generatorRepository) : void
+    public function handle(GeneratorRepository $generatorRepository): void
     {
         $this->generatorRepository = $generatorRepository;
 
@@ -27,7 +25,6 @@ class ControllerTransformer extends BaseTransformer
         $this->generatorRepository->putFile($destination, $tranformed);
     }
 
-
     protected function makeController()
     {
         $content = $this->getContents('Controllers/ResourceController.php');
@@ -39,6 +36,4 @@ class ControllerTransformer extends BaseTransformer
 
         $this->generatorRepository->putFile($destination, $tranformed);
     }
-
-
 }
