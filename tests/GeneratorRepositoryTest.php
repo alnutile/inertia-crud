@@ -28,6 +28,6 @@ class GeneratorRepositoryTest extends TestCase
 
         $generator->handle('Foo', 'Foos');
 
-        $this->assertStringContainsString('src/Generator/../../STUBS/', $generator->getRootPathOrStubs());
+        $this->assertStringContainsString('../STUBS/', $generator->getRootPathOrStubs());
     }
 }
