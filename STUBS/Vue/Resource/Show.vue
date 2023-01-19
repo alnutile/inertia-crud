@@ -1,5 +1,5 @@
 <template>
-    <AppLayout title="Edit Advocate">
+    <AppLayout title="[RESOURCE_PROPER]">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Edit [RESOURCE_PROPER]
