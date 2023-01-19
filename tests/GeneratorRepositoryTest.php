@@ -15,4 +15,13 @@ class GeneratorRepositoryTest extends TestCase
         $this->assertEquals('foos', $generator->resource_plural_key);
         $this->assertEquals('foo', $generator->resource_singular_key);
     }
+
+    public function test_path()
+    {
+        $generator = new GeneratorRepository();
+
+        $generator->handle('Foo', 'Foos');
+
+        $this->assertStringContainsString('src/Generator/../../STUBS/', $generator->getRootPathOrStubs());
+    }
 }

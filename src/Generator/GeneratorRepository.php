@@ -21,4 +21,9 @@ class GeneratorRepository
 
         return $this;
     }
+
+    public function getRootPathOrStubs(): string
+    {
+        return __DIR__.'/../../STUBS/';
+    }
 }
