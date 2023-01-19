@@ -10,11 +10,20 @@ class ControllerTransformerTest extends TestCase
 {
     public function test_copies_to_folders()
     {
-        File::shouldReceive('get')->times(4)
+        File::shouldReceive('exists')->andReturnTrue();
+        File::shouldReceive('allFiles')->andReturn(
+            [
+                new \Symfony\Component\Finder\SplFileInfo('Foo.vue', '', 'foo.bar'),
+            ]
+        );
+
+        File::shouldReceive('get')
             ->andReturn('Foo bar [RESOURCE_PROPER] [RESOURCE_SINGULAR_KEY]');
-        File::shouldReceive('put')->times(4)
+        File::shouldReceive('put')
             ->withArgs(function ($filePath, $content) {
-                return $content === 'Foo bar Foo foo';
+                $this->assertStringContainsString('Foo bar Foo foo', $content);
+
+                return true;
             });
         $generator = new GeneratorRepository();
         $generator->handle('Foo', 'Foos');

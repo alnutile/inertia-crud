@@ -3,6 +3,7 @@
 namespace SundanceSolutions\InertiaCrud\Tests;
 
 use Facades\SundanceSolutions\InertiaCrud\Generator\ControllerTransformer;
+use Facades\SundanceSolutions\InertiaCrud\Generator\VueTransformer;
 use SundanceSolutions\InertiaCrud\Generator\GeneratorRepository;
 
 class GeneratorRepositoryTest extends TestCase
@@ -10,6 +11,7 @@ class GeneratorRepositoryTest extends TestCase
     public function test_keys()
     {
         ControllerTransformer::shouldReceive('handle')->once();
+        VueTransformer::shouldReceive('handle')->once();
         $generator = new GeneratorRepository();
 
         $generator->handle('Foo', 'Foos');
@@ -21,6 +23,7 @@ class GeneratorRepositoryTest extends TestCase
     public function test_path()
     {
         ControllerTransformer::shouldReceive('handle')->once();
+        VueTransformer::shouldReceive('handle')->once();
         $generator = new GeneratorRepository();
 
         $generator->handle('Foo', 'Foos');
