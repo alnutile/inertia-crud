@@ -1,3 +1,5 @@
 # Changelog
 
-All notable changes to `inertia-crud` will be documented in this file.
+## 0.0.1 2023-01-19
+
+Kicking off things will document more soon.

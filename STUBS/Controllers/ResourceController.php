@@ -13,7 +13,6 @@ class [RESOURCE_PROPER]Controller extends Controller
         return Inertia::render('[RESOURCE_PROPER_PLURAL]/Index', [
             /** @phpstan-ignore-next-line */
             '[RESOURCE_PLURAL_KEY]' => [RESOURCE_PROPER]::query()
-                ->with('[RESOURCE_SINGULAR_KEY]')
                 ->orderBy('updated_at', 'DESC')
                 ->simplePaginate(10)
                 ->withQueryString(),

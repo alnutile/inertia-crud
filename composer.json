@@ -4,7 +4,8 @@
     "keywords": [
         "alnutile",
         "laravel",
-        "inertia-crud"
+        "inertia",
+        "crud"
     ],
     "homepage": "https://github.com/alnutile/inertia-crud",
     "license": "MIT",
