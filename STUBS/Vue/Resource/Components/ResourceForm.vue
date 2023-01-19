@@ -21,17 +21,6 @@
         ></InputError>
     </div>
 
-    <div class="mb-4">
-        <InputLabel value="Campaign"/>
-
-        <Select
-        :options="campaigns"
-        v-model="modelValue.campaign_id"
-        ></Select>
-        <InputError
-            v-model="modelValue.errors.campaign_id"
-        ></InputError>
-    </div>
 
 
     <div class="mb-4">
@@ -66,7 +55,7 @@ export default {
         InputError,
         TextInput
     },
-    props: ["modelValue", 'campaigns'],
+    props: ["modelValue"],
     emits: ['update:modelValue']
 }
 </script>

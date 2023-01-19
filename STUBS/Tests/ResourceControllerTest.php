@@ -2,7 +2,7 @@
 
 namespace Tests\Feature\Http\Controllers;
 
-use App\Models\Campaign;
+use App\Models\[RESOURCE_PROPER];
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Inertia\Testing\AssertableInertia as Assert;
@@ -25,7 +25,7 @@ class [RESOURCE_PROPER]ControllerTest extends TestCase
         $this->get(route('[RESOURCE_PLURAL_KEY].index'))
             ->assertStatus(200)
             ->assertInertia(fn (Assert $page) => $page
-                ->component('[RESOURCE_PROPER_PLURAL_KEY]/Index'));
+                ->component('[RESOURCE_PROPER_PLURAL]/Index'));
     }
 
     public function test_show()
@@ -42,7 +42,7 @@ class [RESOURCE_PROPER]ControllerTest extends TestCase
         ]))
             ->assertStatus(200)
             ->assertInertia(fn (Assert $page) => $page
-                ->component('[RESOURCE_PROPER_PLURAL_KEY]/Show'));
+                ->component('[RESOURCE_PROPER_PLURAL]/Show'));
     }
 
     public function test_edit()
@@ -59,7 +59,7 @@ class [RESOURCE_PROPER]ControllerTest extends TestCase
         ]))
             ->assertStatus(200)
             ->assertInertia(fn (Assert $page) => $page
-                ->component('[RESOURCE_PROPER_PLURAL_KEY]/Edit'));
+                ->component('[RESOURCE_PROPER_PLURAL]/Edit'));
     }
 
 
@@ -99,7 +99,7 @@ class [RESOURCE_PROPER]ControllerTest extends TestCase
         $this->get(route('[RESOURCE_PLURAL_KEY].create'))
             ->assertStatus(200)
             ->assertInertia(fn (Assert $page) => $page
-                ->component('[RESOURCE_PROPER_PLURAL_KEY]/Create'));
+                ->component('[RESOURCE_PROPER_PLURAL]/Create'));
     }
 
     public function test_store()
