@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Advocate;
-use App\Models\Campaign;
-use App\Models\Template;
+use App\Models\[RESOURCE_PROPER];
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 

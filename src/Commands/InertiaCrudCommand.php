@@ -2,6 +2,7 @@
 
 namespace SundanceSolutions\InertiaCrud\Commands;
 
+use Facades\SundanceSolutions\InertiaCrud\Generator\GeneratorRepository;
 use Illuminate\Console\Command;
 
 class InertiaCrudCommand extends Command
@@ -21,9 +22,10 @@ class InertiaCrudCommand extends Command
 
         $this->comment('Gonna go make your some files one moment');
 
-        //ask if git commit so they can see the files made
+        /** @var \SundanceSolutions\InertiaCrud\Generator\GeneratorRepository $generator */
+        $generator = GeneratorRepository::handle($resource_proper, $resource_proper_plural);
 
-        $this->comment('All done');
+        $this->comment('All done, check your git status');
 
         return self::SUCCESS;
     }

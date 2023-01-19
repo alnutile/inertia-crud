@@ -2,6 +2,9 @@
 
 namespace SundanceSolutions\InertiaCrud\Generator;
 
+use Facades\SundanceSolutions\InertiaCrud\Generator\ControllerTransformer;
+use Illuminate\Support\Facades\File;
+
 class GeneratorRepository
 {
     public string $resource_proper;
@@ -19,7 +22,14 @@ class GeneratorRepository
         $this->resource_singular_key = str($resource_proper)->lower()->toString();
         $this->resource_plural_key = str($resource_proper_plural)->lower()->toString();
 
+        ControllerTransformer::handle($this);
+
         return $this;
+    }
+
+    public function putFile(string $pathWithName, string $content)
+    {
+        File::put($pathWithName, $content);
     }
 
     public function getRootPathOrStubs(): string

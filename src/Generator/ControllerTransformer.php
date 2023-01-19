@@ -2,14 +2,21 @@
 
 namespace SundanceSolutions\InertiaCrud\Generator;
 
+use Facades\SundanceSolutions\InertiaCrud\Generator\TokenReplacer;
+use Illuminate\Support\Facades\File;
+
 class ControllerTransformer
 {
     public function handle(GeneratorRepository $generatorRepository)
     {
-        //get the files
+        $controllerStubPath = $generatorRepository->getRootPathOrStubs().'/Controllers/ResourceController.php';
+        $controllerContent = File::get($controllerStubPath);
 
-        //replace text
+        $tranformed = TokenReplacer::handle($generatorRepository, $controllerContent);
 
-        //and put in the right places
+        $name = sprintf('%sController.php', $generatorRepository->resource_proper);
+        $destination = base_path('app/Http/Controllers/'.$name);
+
+        $generatorRepository->putFile($destination, $tranformed);
     }
 }
