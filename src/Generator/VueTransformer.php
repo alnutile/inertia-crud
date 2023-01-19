@@ -11,6 +11,7 @@ class VueTransformer extends BaseTransformer
     {
         $this->generatorRepository = $generatorRepository;
         $this->makeVue();
+        $this->makeComponents();
     }
 
     protected function makeVue()
@@ -45,6 +46,22 @@ class VueTransformer extends BaseTransformer
             }
 
             $this->generatorRepository->putFile($destination, $transformed);
+        }
+    }
+
+    protected function makeComponents()
+    {
+        $rootPath = base_path('resources/js/Components');
+
+        if (! File::exists($rootPath)) {
+            File::makeDirectory($rootPath);
+        }
+
+        $files = File::allFiles($this->generatorRepository->getRootPathOrStubs().'Vue/Components/');
+
+        /** @var \Symfony\Component\Finder\SplFileInfo $file */
+        foreach ($files as $file) {
+            File::copy($file->getPathname(), $rootPath . "/" . $file->getFilename());
         }
     }
 }

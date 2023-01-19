@@ -35,7 +35,7 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import SectionTitle from "@/Components/SectionTitle.vue"
-import ResourceForm from "@/Pages/[RESOURCE_PLURAL_PROPER]/Components/ResourceForm.vue";
+import ResourceForm from "@/Pages/[RESOURCE_PROPER_PLURAL]/Components/ResourceForm.vue";
 import { useForm } from "@inertiajs/inertia-vue3";
 import {useToast} from "vue-toastification";
 

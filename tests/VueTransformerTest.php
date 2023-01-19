@@ -17,6 +17,7 @@ class VueTransformerTest extends TestCase
             ]
         );
 
+        File::shouldReceive('copy')->twice();
         File::shouldReceive('exists')->andReturnTrue();
 
         File::shouldReceive('get')

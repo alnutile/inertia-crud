@@ -16,6 +16,13 @@ On that note it assumes:
   * Tailwind
   * VueJS 3
   * Inertia 
+  * vue-toastification
+
+Some of the components come from JetStream
+
+
+You may have to fix the `import AppLayout from '@/Layouts/AppLayout.vue';` in the files 
+I will make that a config option later.
 
 ## TODO 
   * Grab Components too
