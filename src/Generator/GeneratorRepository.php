@@ -3,6 +3,7 @@
 namespace SundanceSolutions\InertiaCrud\Generator;
 
 use Facades\SundanceSolutions\InertiaCrud\Generator\ControllerTransformer;
+use Facades\SundanceSolutions\InertiaCrud\Generator\VueTransformer;
 use Illuminate\Support\Facades\File;
 
 class GeneratorRepository
@@ -23,6 +24,7 @@ class GeneratorRepository
         $this->resource_plural_key = str($resource_proper_plural)->lower()->toString();
 
         ControllerTransformer::handle($this);
+        VueTransformer::handle($this);
 
         return $this;
     }
