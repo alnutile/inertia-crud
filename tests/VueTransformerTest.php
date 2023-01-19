@@ -30,7 +30,7 @@ class VueTransformerTest extends TestCase
             });
 
         $generator = new GeneratorRepository();
-        $generator->handle('Foo', 'Foos');
+        $generator->setup('Foo', 'Foos');
 
         $transformer = new VueTransformer();
         $transformer->handle($generator);

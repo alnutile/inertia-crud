@@ -23,7 +23,7 @@ class InertiaCrudCommand extends Command
         $this->comment('Gonna go make your some files one moment');
 
         /** @var \SundanceSolutions\InertiaCrud\Generator\GeneratorRepository $generator */
-        $generator = GeneratorRepository::handle($resource_proper, $resource_proper_plural);
+        $generator = GeneratorRepository::setup($resource_proper, $resource_proper_plural)->run();
 
         $this->comment('All done, check your git status');
 

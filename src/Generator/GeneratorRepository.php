@@ -3,6 +3,7 @@
 namespace SundanceSolutions\InertiaCrud\Generator;
 
 use Facades\SundanceSolutions\InertiaCrud\Generator\ControllerTransformer;
+use Facades\SundanceSolutions\InertiaCrud\Generator\RoutesTransformer;
 use Facades\SundanceSolutions\InertiaCrud\Generator\VueTransformer;
 use Illuminate\Support\Facades\File;
 
@@ -16,15 +17,21 @@ class GeneratorRepository
 
     public string $resource_plural_key;
 
-    public function handle($resource_proper, $resource_proper_plural)
+    public function setup($resource_proper, $resource_proper_plural)
     {
         $this->resource_proper = $resource_proper;
         $this->resource_proper_plural = $resource_proper_plural;
         $this->resource_singular_key = str($resource_proper)->lower()->toString();
         $this->resource_plural_key = str($resource_proper_plural)->lower()->toString();
 
+        return $this;
+    }
+
+    public function run()
+    {
         ControllerTransformer::handle($this);
         VueTransformer::handle($this);
+        RoutesTransformer::handle($this);
 
         return $this;
     }

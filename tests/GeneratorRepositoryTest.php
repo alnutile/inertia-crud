@@ -3,6 +3,7 @@
 namespace SundanceSolutions\InertiaCrud\Tests;
 
 use Facades\SundanceSolutions\InertiaCrud\Generator\ControllerTransformer;
+use Facades\SundanceSolutions\InertiaCrud\Generator\RoutesTransformer;
 use Facades\SundanceSolutions\InertiaCrud\Generator\VueTransformer;
 use SundanceSolutions\InertiaCrud\Generator\GeneratorRepository;
 
@@ -12,9 +13,10 @@ class GeneratorRepositoryTest extends TestCase
     {
         ControllerTransformer::shouldReceive('handle')->once();
         VueTransformer::shouldReceive('handle')->once();
+        RoutesTransformer::shouldReceive('handle')->once();
         $generator = new GeneratorRepository();
 
-        $generator->handle('Foo', 'Foos');
+        $generator->setup('Foo', 'Foos')->run();
 
         $this->assertEquals('foos', $generator->resource_plural_key);
         $this->assertEquals('foo', $generator->resource_singular_key);
@@ -24,9 +26,10 @@ class GeneratorRepositoryTest extends TestCase
     {
         ControllerTransformer::shouldReceive('handle')->once();
         VueTransformer::shouldReceive('handle')->once();
+        RoutesTransformer::shouldReceive('handle')->once();
         $generator = new GeneratorRepository();
 
-        $generator->handle('Foo', 'Foos');
+        $generator->setup('Foo', 'Foos')->run();
 
         $this->assertStringContainsString('../STUBS/', $generator->getRootPathOrStubs());
     }

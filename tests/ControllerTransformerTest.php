@@ -26,7 +26,7 @@ class ControllerTransformerTest extends TestCase
                 return true;
             });
         $generator = new GeneratorRepository();
-        $generator->handle('Foo', 'Foos');
+        $generator->setup('Foo', 'Foos');
 
         $controllerGenerator = new ControllerTransformer();
         $controllerGenerator->handle($generator);
