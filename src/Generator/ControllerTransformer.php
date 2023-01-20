@@ -20,7 +20,7 @@ class ControllerTransformer extends BaseTransformer
         $tranformed = TokenReplacer::handle($this->generatorRepository, $content);
 
         $name = sprintf('%sControllerTest.php', $this->generatorRepository->resource_proper);
-        $destination = base_path('tests/Feature/Http/'.$name);
+        $destination = base_path('tests/Feature/Http/Controllers/'.$name);
 
         $this->generatorRepository->putFile($destination, $tranformed);
     }
