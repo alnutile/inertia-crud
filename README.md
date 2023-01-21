@@ -121,7 +121,7 @@ I will make that a config option later.
 You can install the package via composer:
 
 ```bash
-composer require alnutile/inertia-crud
+composer require alnutile/inertia-crud --dev
 ```
 
 ## Usage
