@@ -6,7 +6,6 @@ use App\Models\[RESOURCE_PROPER];
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Inertia\Testing\AssertableInertia as Assert;
-use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 
 class [RESOURCE_PROPER]ControllerTest extends TestCase
