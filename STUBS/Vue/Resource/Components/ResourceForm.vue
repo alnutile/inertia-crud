@@ -6,7 +6,7 @@
             v-model="modelValue.subject"
         ></TextInput>
         <InputError
-            v-model="modelValue.errors.subject"
+            :message="modelValue.errors.subject"
         ></InputError>
     </div>
 
@@ -17,7 +17,7 @@
             v-model="modelValue.message"
         ></TextArea>
         <InputError
-            v-model="modelValue.errors.message"
+            :message="modelValue.errors.message"
         ></InputError>
     </div>
 
@@ -32,7 +32,7 @@
         ></Checkbox>
 
         <InputError
-            v-model="modelValue.errors.active"
+            :message="modelValue.errors.active"
         ></InputError>
     </div>
 </template>
