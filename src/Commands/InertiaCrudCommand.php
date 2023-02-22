@@ -12,7 +12,7 @@ class InertiaCrudCommand extends Command
     {resource_proper_plural : Same as above but add an s eg Foos so I do not need to figure that out yet}
     ';
 
-    public $description = 'My command';
+    public $description = 'Generate some Inertia Files';
 
     public function handle(): int
     {
