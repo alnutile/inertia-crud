@@ -15,11 +15,10 @@
 
 </template>
 
-<script>
-export default {
-    name: "Active",
-    props: ['active']
-}
+<script setup>
+const props = defineProps({
+    active: Boolean
+});
 </script>
 
 <style scoped>

@@ -72,7 +72,7 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import Active from "@/Components/Active.vue";
 import SimplePaginate from "@/Components/SimplePaginate.vue";
 import {useToast} from "vue-toastification";
-import { Link } from "@inertiajs/inertia-vue3"
+import { Link } from "@inertiajs/vue3"
 
 export default {
     name: "Index",

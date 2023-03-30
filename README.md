@@ -5,6 +5,7 @@
 
 ![](images/logo.png)
 
+>This assumes you are using JetStream and will assume those components are there
 
 >Thanks to [https://github.com/spatie/package-skeleton-laravel](https://github.com/spatie/package-skeleton-laravel)
 

@@ -26,7 +26,7 @@
 <script>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import SectionTitle from "@/Components/SectionTitle.vue"
-import { useForm } from "@inertiajs/inertia-vue3";
+import { useForm } from "@inertiajs/vue3";
 import {useToast} from "vue-toastification";
 
 export default {
